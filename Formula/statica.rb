@@ -2,20 +2,20 @@
 class Statica < Formula
   desc "Simple CLI tool to deploy static websites to AWS S3 with Cloudflare DNS"
   homepage "https://github.com/vojtechmares/statica"
-  version "0.2.0"
+  version "0.2.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/vojtechmares/statica/releases/download/v0.2.0/statica_v0.2.0_darwin_amd64.tar.gz"
-    sha256 "ce2a1ce8dd4ce915e8051c48c726d0c7bfa51d53f213869a483c7cd4112442d4"
+    url "https://github.com/vojtechmares/statica/releases/download/v0.2.1/statica_v0.2.1_darwin_amd64.tar.gz"
+    sha256 "88c84fb716bfd648d3dfe1a54d557cc93fd6fd7b7e1238110350fb621ab90510"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/vojtechmares/statica/releases/download/v0.2.0/statica_v0.2.0_linux_amd64.tar.gz"
-    sha256 "6df80e054bba0af4f3f9a43c6c1a17392681c008239009dc453b28707aa28bde"
+    url "https://github.com/vojtechmares/statica/releases/download/v0.2.1/statica_v0.2.1_linux_amd64.tar.gz"
+    sha256 "42e1e259061e09cd23d5f08837858691cdfd19dfaaf3a2c877008a154b221076"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/vojtechmares/statica/releases/download/v0.2.0/statica_v0.2.0_linux_arm64.tar.gz"
-    sha256 "901252dc7ef1a3ac2fbcf2007cb496a347dee7fb2f4e4d8bbaa460331f8f380a"
+    url "https://github.com/vojtechmares/statica/releases/download/v0.2.1/statica_v0.2.1_linux_arm64.tar.gz"
+    sha256 "44abea5ec10363c318f250c47adc99b7f74e001042e8091a37fd569e07191818"
   end
 
   def install
