@@ -5,33 +5,44 @@
 class Statica < Formula
   desc "Simple CLI tool to deploy static websites to AWS S3 with Cloudflare DNS"
   homepage "https://github.com/vojtechmares/statica"
-  version "0.4.0"
-  bottle :unneeded
+  version "0.8.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/vojtechmares/statica/releases/download/v0.4.0/statica_v0.4.0_darwin_amd64.tar.gz"
-      sha256 "06602bb02b6f2a32ed03aed3fbf4d859f6ee829cef498b6ba977d87fe1d006ac"
+      url "https://github.com/vojtechmares/statica/releases/download/v0.8.0/statica_v0.8.0_darwin_amd64.tar.gz"
+      sha256 "f9beb48df4bf32d128772accc01bb378d87220b3941025d59ad81a87b69c4dff"
+
+      def install
+        bin.install "statica"
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/vojtechmares/statica/releases/download/v0.4.0/statica_v0.4.0_darwin_arm64.tar.gz"
-      sha256 "0aa036879cffb2d2d6a1c49ec09d84c609e668b43b342b5f3262d89511a69407"
+      url "https://github.com/vojtechmares/statica/releases/download/v0.8.0/statica_v0.8.0_darwin_arm64.tar.gz"
+      sha256 "9b9e94b4741c7e55eb6cfd1b6bd1702a2bb9f4f6182ce38447dc8975b4212f5b"
+
+      def install
+        bin.install "statica"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/vojtechmares/statica/releases/download/v0.4.0/statica_v0.4.0_linux_amd64.tar.gz"
-      sha256 "d0a1edb354bb0f0abf48315a0af7950e9c4dc667fa62c430964a6d0587031d9b"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/vojtechmares/statica/releases/download/v0.4.0/statica_v0.4.0_linux_arm64.tar.gz"
-      sha256 "6a8f0d71765db5c91ea31c853eb1f5d4e3608fdd1f72f635ae39012458bf9b02"
-    end
-  end
+      url "https://github.com/vojtechmares/statica/releases/download/v0.8.0/statica_v0.8.0_linux_arm64.tar.gz"
+      sha256 "9ab1159ce516c4a759c886b3f3d4fb9dd96f35b72c06d0e6b9ab19ec12f3e9d3"
 
-  def install
-    bin.install "statica"
+      def install
+        bin.install "statica"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/vojtechmares/statica/releases/download/v0.8.0/statica_v0.8.0_linux_amd64.tar.gz"
+      sha256 "ca6930d3a0efeccb2e4297306831b202da4875e3da4977fd25d0d17ecf980c8c"
+
+      def install
+        bin.install "statica"
+      end
+    end
   end
 
   def caveats; <<~EOS
