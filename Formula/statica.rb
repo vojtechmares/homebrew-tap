@@ -6,6 +6,7 @@ class Statica < Formula
   desc "Simple CLI tool to deploy static websites to AWS S3 with Cloudflare DNS"
   homepage "https://github.com/vojtechmares/statica"
   version "0.8.0"
+  deprecate! date: "2024-06-17", because: "statica has been discontinued"
 
   on_macos do
     if Hardware::CPU.intel?
