@@ -23,10 +23,10 @@ cask "caffeinum" do
   # Gatekeeper will not launch a quarantined bundle it cannot verify. Failing
   # here would abort the install after the app is already in place, and a
   # Gatekeeper prompt is the better of those two outcomes.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args:         ["-d", "-r", "com.apple.quarantine", "#{appdir}/Caffeinum.app"],
-                   must_succeed: false
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:         ["-d", "-r", "com.apple.quarantine", "{{appdir}}/Caffeinum.app"],
+        must_succeed: false
   end
 
   uninstall quit: "cz.mares.caffeinum"
